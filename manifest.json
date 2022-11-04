@@ -1,0 +1,27 @@
+{
+  "name": "TrueNote",
+  "description": "Permet de calculer ta vraie moyenne générale sur Pronote ou sur Mon bureau numérique.",
+  "manifest_version": 2,
+  "version": "2.1.1",
+  "homepage_url": "https://github.com/AlfaXe08/TrueNote",
+  "icons": {
+    "32": "icons/TrueNote-icon-32x32.png",
+    "128":"icons/TrueNote-icon-128x128.png"
+  },
+
+  "permissions": ["activeTab"],
+
+  "browser_action": {
+    "default_title": "TrueNote",
+    "default_popup": "popup/index.html",
+    "default_icon": {
+      "32": "icons/TrueNote-icon-32x32.png",
+      "128":"icons/TrueNote-icon-128x128.png"
+    },
+    "theme_icons": [{
+        "light": "icons/TrueNote-icon-32x32.png",
+        "dark": "icons/TrueNote-icon-32x32.png",
+        "size": 32
+    }]
+  }
+}

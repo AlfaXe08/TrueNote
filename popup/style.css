@@ -1,0 +1,113 @@
+body {
+  min-width: 250px; 
+  width: 300px;
+  background-color: #1B282D;
+  padding-left: 5px;
+  overflow-x: hidden;
+}
+
+/* Style cadre*/
+.cadre {
+  color: #bbb;
+  text-align: center;
+  justify-content: center;
+  border: 0px solid #bbb;
+}
+
+/* Style texte de base*/
+p {
+	color:#bbb;
+	font: 100% arial;
+}
+
+/* Style anchor*/
+
+a {
+	color:#bbb;
+	font: arial;
+  font-size: 100%;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color:#ff6c00 ;
+}
+
+a:active {
+  color:#ff6600;
+}
+
+ /* Style the tab */
+.tab {
+  background-color: #1B282D;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: #1B282D;
+  color:#bbb;
+  font-size: 100%;
+  border: none;
+  cursor: pointer;
+  width: 45%;
+  padding: 10px 10px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #193945;
+}
+
+.tab hr {
+  position: absolute;
+  border-top: 1px solid #bbb;
+  color: #bbb;
+}
+
+.tab div.vr {
+  border-left: 2px solid #bbb;
+  position: absolute;
+  top: 8px;
+}
+
+/* Style the tab content */
+.tabcontent {
+  border: 0px solid #bbb;
+} 
+
+@keyframes pop{
+  50%  {transform: scale(1.4);}
+}
+
+.matiereNoteEleveList, .matiereNoteClasseList {
+  margin: 15px 5px;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  display: flex; 
+  justify-content: space-between;
+  cursor: pointer;
+
+}
+
+.matiereNoteEleveList:hover, .matiereNoteClasseList:hover {
+  background-color: #193945;
+  text-decoration: line-through;
+}
+
+.matiereNoteEleveList:active, .matiereNoteClasseList:active{
+  animation: pop 0.45s linear 1;
+}
+
+#cadreMoyenneGenerale {
+	color:#bbb;
+	font: arial;
+  font-size: 12px;
+  text-decoration: none;
+}
