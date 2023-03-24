@@ -66,6 +66,7 @@ function getNotesReleve() {
         }
     	}
   	}
+
     else if (colonne === "5") {
     	for(var i = 0; i < listLigne.length; i++) {
       	if (ligne === listLigne[i]) {
@@ -90,6 +91,10 @@ function getNotesReleve() {
       } 
     }
   }
+
+  console.log("releve");
+
+  console.log(listMatieresNotes);
   
   return [listMatieresNotes, listMatieresNotesClasse];
 }
@@ -145,6 +150,7 @@ function getNotesENT() {
 }
 
 (function() {
+  console.log("get note");
   var listMatieresNotesClasse = [];
   var titlePronote = document.getElementById("breadcrumbBandeau");
   var titleENT = document.getElementById("releve-eleve");

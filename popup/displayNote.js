@@ -206,8 +206,10 @@ browser.tabs.executeScript({
   ).then(result => { 
    
   console.log(result);  
-  console.log(result[0]);  
+  // console.log(result[0]);  
+  console.log("matiere et note eleve");
   console.log(result[0][0]);
+  console.log("matiere et note classe");
   console.log(result[0][1]);
 
   if (result[0] !== "nothing") {
