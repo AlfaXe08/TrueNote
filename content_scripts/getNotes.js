@@ -20,6 +20,15 @@ function getNotesDetail() {
         matieresWithNotes.push([matiere, note]);
       }
     }
+
+    let findDuplicates = arr => arr.filter((item, index) => arr.indexOf(item) !== index)
+    console.log(findDuplicates);
+
+    // for(let matiere of matieres)
+    // {
+    //   pass
+    // }
+
     return(matieresWithNotes);
 }
 
@@ -28,27 +37,17 @@ function getNotesReleve() {
   var listMatieresNotes = [];
   var listMatieresNotesClasse = [];
 
-  var offsetWidthHigher = [];
+	var cadreMatiere = document.getElementsByClassName("Titre liste_gridTitre_cel")[0];
 
-  for(var i = 0; i < elem.length; i++) {
-    var offsetWidth = elem[i].offsetWidth;
-    if (offsetWidth > offsetWidthHigher)
-      offsetWidthHigher = offsetWidth;
-  }
+  var offsetWidthMatiere = cadreMatiere.offsetWidth - 5;
 
-  console.log(offsetWidthHigher);
-
-  for(var i = 0; i < elem.length; i++) {
-    //console.log(elem[i]);
-    var arialLabel = elem[i].outerText;
-    
-    if (elem[i].offsetWidth == offsetWidthHigher)
+  for(var i = 0; i < elem.length; i++) {    
+    if (elem[i].offsetWidth == offsetWidthMatiere)
     {
-      console.log("matière");
+      var arialLabel = elem[i].outerText;
       var posLine = arialLabel.indexOf("\n");
       if(posLine != -1)
         matiere = arialLabel.substring(0, posLine);
-      console.log(matiere);
       
       note = elem[i + 1].outerText;
       if(note.length >= 4)
