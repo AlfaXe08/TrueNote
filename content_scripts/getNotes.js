@@ -44,18 +44,18 @@ function getNotesReleve() {
   for(var i = 0; i < elem.length; i++) {    
     if (elem[i].offsetWidth == offsetWidthMatiere)
     {
-      var arialLabel = elem[i].outerText;
+      var arialLabel = elem[i].innerText;
       var posLine = arialLabel.indexOf("\n");
       if(posLine != -1)
         matiere = arialLabel.substring(0, posLine);
       
-      note = elem[i + 1].outerText;
+      note = elem[i + 1].innerText;
       if(note.length >= 4)
         {
           listMatieresNotes.push([matiere, note])
         }
 
-      note = elem[i + 2].outerText;
+      note = elem[i + 2].innerText;
       if(note.length >= 4)
         {
           listMatieresNotesClasse.push([matiere, note])
