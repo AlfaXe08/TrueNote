@@ -204,13 +204,6 @@ window.addEventListener("click", displayUpdate);
 browser.tabs.executeScript({
   file: "/content_scripts/getNotes.js"}
   ).then(result => { 
-   
-  console.log(result);  
-  // console.log(result[0]);  
-  console.log("matiere et note eleve");
-  console.log(result[0][0]);
-  console.log("matiere et note classe");
-  console.log(result[0][1]);
 
   if (result[0] !== "nothing") {
     createNoteList(result[0][0], tabContentEleve, "matiereNoteEleveList");
