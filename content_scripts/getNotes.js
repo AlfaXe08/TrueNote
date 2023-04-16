@@ -22,12 +22,6 @@ function getNotesDetail() {
     }
 
     let findDuplicates = arr => arr.filter((item, index) => arr.indexOf(item) !== index)
-    console.log(findDuplicates);
-
-    // for(let matiere of matieres)
-    // {
-    //   pass
-    // }
 
     return(matieresWithNotes);
 }
@@ -117,7 +111,6 @@ function getNotesENT() {
 }
 
 (function() {
-  console.log("get note");
   var listMatieresNotesClasse = [];
   var titlePronote = document.getElementById("breadcrumbBandeau");
   var titleENT = document.getElementById("releve-eleve");
