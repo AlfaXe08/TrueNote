@@ -20,74 +20,40 @@ function getNotesDetail() {
         matieresWithNotes.push([matiere, note]);
       }
     }
+
+    let findDuplicates = arr => arr.filter((item, index) => arr.indexOf(item) !== index)
+
     return(matieresWithNotes);
 }
 
 function getNotesReleve() {
   var elem = document.getElementsByClassName("liste_contenu_ligne");
-
-  var listLigne = []; 	
-	var listMatieres = []; 
-  var listNotes = [];
-  var listNoteClasses = [];
   var listMatieresNotes = [];
   var listMatieresNotesClasse = [];
 
-  
-  for(var i = 0; i < elem.length; i++) {
-    var attributes = elem[i].offsetParent.offsetParent.attributes;
-    var arialLabel = attributes[1].textContent;
-    var posSpace2 = arialLabel.indexOf(" ", 6);
-		var posSpace3 = arialLabel.indexOf(" ", 12);
-    var ligne = arialLabel.substring(6, posSpace2);
-		var colonne = arialLabel.substring(posSpace3 + 1);
-    
-    if (colonne === "1")
-      {
-        if (elem[i].innerText.length >= 2){
-          listMatieres.push(elem[i].lastChild.firstChild.firstChild.data);
-          listLigne.push(ligne);
-        }
-      }
-  }
+	var cadreMatiere = document.getElementsByClassName("Titre liste_gridTitre_cel")[0];
 
-  for(var i2 = 0; i2 < elem.length; i2++) {
-		var attributes = elem[i2].offsetParent.offsetParent.attributes;
-  	var arialLabel = attributes[1].textContent;
-    var posSpace2 = arialLabel.indexOf(" ", 6);
-    var posSpace3 = arialLabel.indexOf(" ", 12);
-    var ligne = arialLabel.substring(6, posSpace2);
-    var colonne = arialLabel.substring(posSpace3 + 1);
-  
-    if (colonne === "4") {
-    	for(var i = 0; i < listLigne.length; i++) {
-      	if (ligne === listLigne[i]) {
-					listNotes.push(elem[i2].firstChild.innerText);
-        }
-    	}
-  	}
-    else if (colonne === "5") {
-    	for(var i = 0; i < listLigne.length; i++) {
-      	if (ligne === listLigne[i]) {
-					listNoteClasses.push(elem[i2].innerText);
-        }
-    	}
-  	}
-  }
+  var offsetWidthMatiere = cadreMatiere.offsetWidth - 5;
 
-  for (i = 0; i < listMatieres.length; i++) {
-    if (listNotes[i] !== "") {
-      if (listNotes[i].replace(/\s/g, '').length) {
-    	  listMatieresNotes.push([listMatieres[i], listNotes[i]]); 
-      }
-    }
-  }
+  for(var i = 0; i < elem.length; i++) {    
+    if (elem[i].offsetWidth == offsetWidthMatiere)
+    {
+      var arialLabel = elem[i].innerText;
+      var posLine = arialLabel.indexOf("\n");
+      if(posLine != -1)
+        matiere = arialLabel.substring(0, posLine);
+      
+      note = elem[i + 1].innerText;
+      if(note.length >= 4)
+        {
+          listMatieresNotes.push([matiere, note])
+        }
 
-  for (i = 0; i < listMatieres.length; i++) {
-    if (listNoteClasses[i] !== "") {
-      if (listNoteClasses[i].replace(/\s/g, '').length) {
-        listMatieresNotesClasse.push([listMatieres[i], listNoteClasses[i]]); 
-      } 
+      note = elem[i + 2].innerText;
+      if(note.length >= 4)
+        {
+          listMatieresNotesClasse.push([matiere, note])
+        }
     }
   }
   
